@@ -1,24 +1,15 @@
-# README
+makes it easier to use css3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+broswer vendor prefixes, so it looks consistent in different browsers
 
-Things you may want to cover:
+CSS sprites- compile images into one request
 
-* Ruby version
+assign images with html class
 
-* System dependencies
+gem 'compass-rails'
+application.css.scss
+@import "compass"
+@import "layout"
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+source repo on github - https://github.com/Compass/compass-rails
+sample app- https://github.com/chriseppstein/compass-rails-sample-application
