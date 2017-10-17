@@ -14,20 +14,27 @@
       <%= image_tag "rails.jpg" %>
       <% end %>
       <h1 id="title-link">Rails Blog</h1>
-      <p id="about">Home</p>
+      <p id="about"><%= link_to "Home", root_path %></p>
     </div>
-
+    <div id="header">
+      <% if !logged_in? %>
+        <button class="button"><%= link_to "Register", users_new_path  %></button>
+        <button class="button"><%= link_to "Login", sessions_new_path  %></button>
+      <% elsif logged_in? %>
+        <button class="button"><%= link_to "New Post", new_post_path %></button>
+        <button class="button"><%= link_to "Log Out", sessions_path(@session), method: :delete %></button>
+      <% end %>
+    </div>
+  </div>
+  <div class="social-media">
+    <ul class="horizontal">
+      <li><a class="icons-facebook" href="http://facebook.com"></a></li>
+      <li><a class="icons-twitter" href="http://twitter.com"></a></li>
+      <li><a class="icons-instagram" href="http://instagram.com"></a></li>
+      <li><a class="icons-blacktocat" href="http://github.com"></a></li>
+    </ul>
   </div>
   <div class="main-content">
-  <div id="header">
-    <% if !logged_in? %>
-      <button class="button"><%= link_to "Register", users_new_path  %></button>
-      <button class="button"><%= link_to "Login", sessions_new_path  %></button>
-    <% elsif logged_in? %>
-      <button class="button"><%= link_to "New Post", new_post_path %></button>
-      <button class="button"><%= link_to "Log Out", sessions_path(@session), method: :delete %></button>
-    <% end %>
-  </div>
   <% flash.each do |name,msg| %>
   <%= content_tag(:div, msg, class: "alert") %>
   <% end %>

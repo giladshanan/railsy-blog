@@ -1,0 +1,124 @@
+@import "base";
+@import 'normalize.css';
+@import "compass/css3";
+@import "compass/utilities/sprites";
+
+$icons-spacing: 10px;
+@import "icons/*.png";
+$icons-sprite-dimensions: true;
+@include all-icons-sprites;
+
+$green: #436436;
+$yellow: #F3B61F;
+$light_moss: #BBD8B3;
+
+body {
+  padding: 0.3em;
+}
+#header {
+  position: absolute;
+  top: 5.5em;
+  left: 4em;
+}
+
+.social-media {
+  position: absolute;
+  left: 18em;
+  width: 20em;
+  height: 10em;
+  top: 0.5em;
+  border: 0.3em $yellow solid;
+  @include border-radius(25px);
+  @include resize-sprite-set($icons-sprites, 13)
+}
+
+.social-media li {
+  position: relative;
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+.social-media a {
+  display: block;
+  width: 340px;
+  height: 340px;
+}
+
+ul.horizontal {
+  @include horizontal-list;
+  position: relative;
+  top: 3em;
+  left: 1em;
+}
+
+.main-content {
+  margin: 0.3em;
+  text-align: center;
+  border: .7em $yellow solid;
+  @include border-radius(25px);
+}
+
+
+.field_with_errors {
+  color: red;
+}
+
+body {
+  background-color: $green;
+}
+
+#title-link {
+  color: white;
+  position: absolute;
+  top: 8px;
+  left: 60px;
+}
+
+#about {
+  color: white;
+  position: absolute;
+  top: 120px;
+  left: 110px;
+}
+
+a:link {
+    color: $yellow;
+}
+
+a:visited {
+  color: $light_moss;
+}
+
+#logo {
+  position: relative;
+}
+
+img{
+  @include border-radius(25px);
+}
+
+/*.example {
+  #{elements-of-type(block)} {
+    border: 1px solid #777777;
+    margin: 1em 3em;
+  }
+  #{elements-of-type(inline)} {
+    color: #cc0000;
+  }
+}*/
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
